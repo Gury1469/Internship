@@ -1,8 +1,14 @@
 import React from "react";
-import ToDoItem1 from "./ToDoItem1";
-import ToDoItem2 from "./ToDoItem2";
-export default function ToDoList() {
+import ToDoItem from "./ToDoItem";
+import EmptyListError from "./EmptyListError";
+export default function ToDoList({item}) {
+  if(item.length === 0)
+  {
+    return <EmptyListError/>
+  }
+ 
   return (
+    
     <div className="pt-4">
       <table className="table">
         <thead>
@@ -13,8 +19,12 @@ export default function ToDoList() {
           </tr>
         </thead>
         <tbody>
-          <ToDoItem1/>
-          <ToDoItem2/>
+          {item.map((x, index) =>{
+              //console.log(x);
+              return <ToDoItem todo={x} idx={index}/>
+            }
+          )
+          }
         </tbody>
       </table>
     </div>
