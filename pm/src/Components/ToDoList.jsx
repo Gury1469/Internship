@@ -1,5 +1,6 @@
 import React from "react";
 import ToDoItem1 from "./ToDoItem1";
+import ToDoItem2 from "./ToDoItem2";
 export default function ToDoList() {
   return (
     <div className="pt-4">
@@ -13,6 +14,7 @@ export default function ToDoList() {
         </thead>
         <tbody>
           <ToDoItem1/>
+          <ToDoItem2/>
         </tbody>
       </table>
     </div>
